@@ -1,0 +1,14 @@
+# CODEOWNERS
+# コード変更時に自動レビュー依頼する設定
+
+# すべてのファイル
+* @Kazusasakazusasa
+
+# LaTeX ファイル
+*.tex @Kazusasakazusasa
+
+# 設定ファイル
+.github/ @Kazusasakazusasa
+.devcontainer/ @Kazusasakazusasa
+.gitignore @Kazusasakazusasa
+README.md @Kazusasakazusasa
