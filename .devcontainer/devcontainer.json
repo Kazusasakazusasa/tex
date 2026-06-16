@@ -18,26 +18,24 @@
       "settings": {
         "latex-workshop.latex.recipes": [
           {
-            "name": "pdflatex",
-            "tools": ["pdflatex"]
-          },
-          {
-            "name": "xelatex",
-            "tools": ["xelatex"]
+            "name": "pLaTeX + dvipdfmx",
+            "tools": ["platex", "dvipdfmx"]
           }
         ],
         "latex-workshop.latex.tools": [
           {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
+            "name": "platex",
+            "command": "platex",
+            "args": ["-interaction=nonstopmode", "%DOC%"]
           },
           {
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
+            "name": "dvipdfmx",
+            "command": "dvipdfmx",
+            "args": ["%DOCFILE%.dvi"]
           }
-        ]
+        ],
+        "latex-workshop.latex.autoBuild.run": "onFileChange",
+        "latex-workshop.latex.outDir": "%DIR%"
       }
     }
   },
