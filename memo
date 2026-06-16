@@ -1,0 +1,16 @@
+cd /workspaces/Love_Common_test
+git add aQUIZZ.pdf
+git commit -m "Add compiled quiz PDF"
+git push
+実行→実装
+
+下線部を引く
+\bou{2}{なかみ}
+
+四角Ⅰとかを作る
+\fbox{
+  \begin{minipage}[c][たかさ][c]{はば}
+    \centering
+    なかみ
+  \end{minipage}
+}
