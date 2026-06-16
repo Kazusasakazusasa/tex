@@ -1,0 +1,56 @@
+{
+  "name": "Love_Common_test - LaTeX",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.makefile-tools",
+        "James-Yu.latex-workshop",
+        "valentjn.vscode-ltex",
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "pdflatex",
+            "tools": ["pdflatex"]
+          },
+          {
+            "name": "xelatex",
+            "tools": ["xelatex"]
+          }
+        ],
+        "latex-workshop.latex.tools": [
+          {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
+          },
+          {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
+          }
+        ]
+      }
+    }
+  },
+
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+
+  "remoteUser": "vscode",
+
+  "postCreateCommand": "apt-get update && apt-get install -y texlive-full ghostscript",
+
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,readonly"
+  ]
+}
